@@ -58,20 +58,14 @@ function init() {
         });
     });
 
-  //
-
   renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 
-  //
-
   const controls = new OrbitControls(camera, renderer.domElement);
   controls.minDistance = 2;
   controls.maxDistance = 5;
-
-  //
 
   window.addEventListener("resize", onWindowResize);
 }
