@@ -3,7 +3,6 @@ import * as THREE from "three";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { put } from "@vercel/blob";
 
 let camera, scene, renderer;
 
