@@ -21,10 +21,11 @@ function init() {
   // scene
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xa0a0a0);
+  // scene.background = new THREE.Color(0xa0a0a0);
+  scene.background = new THREE.Color(0xeeeeee);
   scene.fog = new THREE.Fog(0xa0a0a0, 10, 2000);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
 
   const pointLight = new THREE.PointLight(0xffffff, 2);
@@ -40,7 +41,7 @@ function init() {
         .setMaterials(materials)
         .setPath("models/")
         .load("Kinetic-Sculpture.obj", function (object) {
-          object.translateX(-0.5);
+          object.translateX(-0.2);
           object.scale.setScalar(2);
           object.rotateX(Math.PI / 2);
           object.rotateZ(-Math.PI / 2);
