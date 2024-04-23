@@ -31,15 +31,6 @@ function init() {
   camera.add(pointLight);
   scene.add(camera);
 
-  // model
-
-  //   const onProgress = function (xhr) {
-  //     if (xhr.lengthComputable) {
-  //       const percentComplete = (xhr.loaded / xhr.total) * 100;
-  //       // console.log(percentComplete.toFixed(2) + '% downloaded');
-  //     }
-  //   };
-
   new MTLLoader()
     .setPath("models/")
     .load("Kinetic-Sculpture.mtl", function (materials) {
@@ -52,7 +43,6 @@ function init() {
           object.translateX(-0.5);
           object.scale.setScalar(2);
           object.rotateX(Math.PI / 2);
-          //   object.rotateY(angle);
           object.rotateZ(-Math.PI / 2);
           scene.add(object);
         });
