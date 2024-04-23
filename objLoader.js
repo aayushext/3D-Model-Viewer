@@ -28,7 +28,7 @@ function init() {
   const ambientLight = new THREE.AmbientLight(0xffffff, 1);
   scene.add(ambientLight);
 
-  const pointLight = new THREE.PointLight(0xffffff, 2);
+  const pointLight = new THREE.PointLight(0xffffff, 0.9);
   camera.add(pointLight);
   scene.add(camera);
 
@@ -45,6 +45,11 @@ function init() {
           object.scale.setScalar(2);
           object.rotateX(Math.PI / 2);
           object.rotateZ(-Math.PI / 2);
+          object.traverse(function (child) {
+            if (child instanceof THREE.Mesh) {
+              child.geometry.computeVertexNormals();
+            }
+          });
           scene.add(object);
         });
     });
@@ -55,7 +60,7 @@ function init() {
   document.body.appendChild(renderer.domElement);
 
   const controls = new OrbitControls(camera, renderer.domElement);
-  controls.minDistance = 2;
+  controls.minDistance = 1;
   controls.maxDistance = 5;
 
   window.addEventListener("resize", onWindowResize);
