@@ -13,18 +13,53 @@
           "three/addons/": "https://unpkg.com/three@v0.161.0/examples/jsm/"
         }
       }
-    </script>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+  <script type="module" src="./objLoader.js"></script>
+
+
+
 </head>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
   body {
     margin: 0;
     padding: 0;
+    font-family: "Montserrat";
+  }
+
+  #para {
+    position: absolute;
+    top: 4%;
+    left: 0.5%;
+  }
+
+  #gui {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .dg {
+    font: 12px "Montserrat";
+    background: #1a1a1a;
+  }
+
+  .dg.main .close-button.close-bottom {
+    position: unset;
   }
 </style>
 
 <body>
-  <script type="module" src="./objLoader.js"></script>
+  <p id="para">// Orbit - left mouse / touch: one-finger move<br>
+    // Zoom - middle mouse, or mousewheel / touch: two-finger spread or squish<br>
+    // Pan - right mouse, or left mouse + ctrl/meta/shiftKey, or arrow keys / touch: two-finger move
+  </p>
+  <div id="gui"></div>
 </body>
 
 </html>
